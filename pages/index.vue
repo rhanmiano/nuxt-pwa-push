@@ -15,7 +15,7 @@ onMounted(() => {
   try {
     subscribeToPush()
 
-    let pusher = new Pusher(config.public.pusherKey, {
+    let pusher = new Pusher('640aabe88fca3e056c00', {
       cluster: 'ap1',
       forceTLS: true
     })
@@ -80,7 +80,7 @@ const subscribeToPush = async () => {
 
 const sendNotification = (payload) => {
   console.log('payload', payload)
-  axios.post(`${config.public.pusherKey}save-subscription`, payload)
+  axios.post(`https://zeta.cyou/api/save-subscription`, payload)
 }
 
 const createSubscription = (registration) => {
@@ -89,7 +89,7 @@ const createSubscription = (registration) => {
   const options = {
     userVisibleOnly: true,
     applicationServerKey: urlB64ToUint8Array(
-      config.public.vapidPrivateKey
+      'BAXJxYJvrk9ZktlpOb33Tfps-ratF_SasBMG6CDcbw-S94agYBaZXSQNC2RcB0LISBzfYgeClb0ueBcthSpGol4'
     )
   }
 

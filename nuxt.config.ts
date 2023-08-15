@@ -46,9 +46,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiUrl: process.env.NUXT_API_URL,
-      pusherKey: process.env.NUXT_PUSHER_KEY,
-      vapidPrivateKey: process.env.NUXT_VAPID_PRIVATE_KEY,
+      apiUrl: process.env.NUXT_PUBLIC_API_URL,
+      pusherKey: process.env.NUXT_PUBLIC_PUSHER_KEY,
+      vapidPrivateKey: process.env.NUXT_PUBLIC_VAPID_PRIVATE_KEY,
     }
   },
 })
