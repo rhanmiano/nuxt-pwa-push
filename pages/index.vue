@@ -80,7 +80,7 @@ const subscribeToPush = async () => {
 
 const sendNotification = (payload) => {
   console.log('payload', payload)
-  axios.post(`https://zeta.cyou/api/save-subscription`, payload)
+  axios.post(`http://localhost/api/save-subscription`, payload)
 }
 
 const createSubscription = (registration) => {
