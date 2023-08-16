@@ -14,35 +14,15 @@ try {
   registerRoute(route);
 } catch (error) {
   console.warn('Error while registering cache route', { error });
-}
+}/* 
+
+const CACHE = "pwabuilder-page";
+const offlineFallbackPage = "offline.html";
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING')
     self.skipWaiting()
 })
-
-self.addEventListener('push', function(event) {
-  let promiseChain = null;
-  if (event.data) {
-    console.log('This push event has data: ', event.data.json());
-    const { title, body } = event.data.json()
-    promiseChain = self.registration.showNotification(title, {
-      body,
-      icon: '/favicon-32x32.png'
-    });
-
-    
-  } else {
-    console.log('This push event has no data.');
-  }
-
-  if (promiseChain) {
-    event.waitUntil(promiseChain);
-  }
-});
-
-const CACHE = "pwabuilder-page";
-const offlineFallbackPage = "offline.html";
 
 self.addEventListener('install', async (event) => {
   event.waitUntil(
@@ -74,5 +54,25 @@ self.addEventListener('fetch', (event) => {
         return cachedResp;
       }
     })());
+  }
+}); */
+
+self.addEventListener('push', function(event) {
+  let promiseChain = null;
+  if (event.data) {
+    console.log('This push event has data: ', event.data.json());
+    const { title, body } = event.data.json()
+    promiseChain = self.registration.showNotification(title, {
+      body,
+      icon: '/favicon-32x32.png'
+    });
+
+    
+  } else {
+    console.log('This push event has no data.');
+  }
+
+  if (promiseChain) {
+    event.waitUntil(promiseChain);
   }
 });
